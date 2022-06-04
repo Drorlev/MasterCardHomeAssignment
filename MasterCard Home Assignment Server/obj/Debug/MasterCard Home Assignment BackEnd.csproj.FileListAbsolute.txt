@@ -1,0 +1,88 @@
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\MasterCard Home Assignment Server.dll.config
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\MasterCard Home Assignment Server.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\MasterCard Home Assignment Server.pdb
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\csc.exe
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\csc.exe.config
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\csc.rsp
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\csi.exe
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\csi.exe.config
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\csi.rsp
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.AppContext.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Console.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Globalization.Calendars.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.IO.Compression.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.IO.FileSystem.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Net.Http.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Net.Sockets.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.ValueTuple.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Xml.XPath.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\vbc.exe
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\vbc.exe.config
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\vbc.rsp
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\VBCSCompiler.exe
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\roslyn\VBCSCompiler.exe.config
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Antlr3.Runtime.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Newtonsoft.Json.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Net.Http.Formatting.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Helpers.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Http.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Http.WebHost.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Mvc.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Optimization.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Razor.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.Razor.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\WebGrease.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Newtonsoft.Json.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Net.Http.Formatting.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Helpers.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Http.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Http.WebHost.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Mvc.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Optimization.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Razor.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.Razor.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Antlr3.Runtime.pdb
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment BackEnd.csproj.AssemblyReference.cache
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment BackEnd.csproj.CoreCompileInputs.cache
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment BackEnd.csproj.CopyComplete
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment Server.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment Server.pdb
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Cors.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Http.Cors.dll
+C:\Projects\MasterCard Home Assignment\MasterCard Home Assignment Server\bin\System.Web.Http.Cors.xml
