@@ -1,0 +1,24 @@
+.Header {
+    background-color: #141413;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    height: 15%;
+}
+.Title{
+    height: 70%;
+    float: left;
+    padding-top: 0.5%;
+}
+
+.logo{
+    height: 75%;
+}
+
+.img{
+    float: left;
+    justify-content: center;
+    width: 30%;
+    height: 80%;
+    padding-top: 1%;
+}
