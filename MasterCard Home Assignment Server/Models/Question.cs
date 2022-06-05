@@ -23,10 +23,10 @@ namespace MasterCard_Home_Assignment_Server.Models
 
         public Question() { }
 
-        public Question GetQuestion(int qid)
+        public List<Question> GetQuestions()
         {
             DBServices ds = new DBServices();
-            return ds.GetQuestion(qid);
+            return ds.GetQuestions();
         }
 
     }

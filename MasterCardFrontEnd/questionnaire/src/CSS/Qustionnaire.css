@@ -2,7 +2,7 @@
     color: black;
 }
 .Home {
-    background-color:  #FFFDD0;
+    background-color:  #FFFEF2;
     height: 85%;
     display: flex;
     flex-direction: column;
@@ -10,4 +10,20 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+.qna{
+    color: black;
+    background-color: #D4CAA3;
+    width: 60%;
+    margin: auto;
+    border: 3px solid green;
+    margin-top: 1%;
+}
+.scroll{
+    max-height:100%;
+    overflow-y: scroll;
+    width: 100%;
+}
+.question{
+    background-color: #F6E8B1;
 }
