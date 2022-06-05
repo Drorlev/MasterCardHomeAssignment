@@ -1,0 +1,8 @@
+.checkbox{
+    padding-right: 5px;
+}
+.rowDiv{
+    width: 100%;
+    display: flexbox;
+    justify-content: start;
+}
