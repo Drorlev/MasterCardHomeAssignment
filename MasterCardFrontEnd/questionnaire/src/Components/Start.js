@@ -4,12 +4,11 @@ import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 
+let qustionnaire = 0;
 const Start = () =>{
-
     const navigate = useNavigate();
-
     const startQ = () => {
-		navigate('/qustionnaire')
+		navigate('/qustionnaire', { state: JSON.stringify(qustionnaire) });
     }
 
     return(

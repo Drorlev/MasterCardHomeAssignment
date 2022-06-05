@@ -1,11 +1,12 @@
 import React from 'react';
 import '../CSS/Qustionnaire.css'
-
-const Qustionnaire = () =>{
-
+import {useLocation} from "react-router-dom";
+import Questions from './Questions';
+const Qustionnaire = ({ route, navigation }) =>{
+    const { state } = useLocation();
     return (
         <div className='Home'>
-         
+            <Questions QustionnaireId={JSON.parse(state)}/>
         </div>
     )
 }
