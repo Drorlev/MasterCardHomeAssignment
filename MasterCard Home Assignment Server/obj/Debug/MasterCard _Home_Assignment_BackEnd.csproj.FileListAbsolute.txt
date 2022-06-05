@@ -168,7 +168,6 @@ C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\bin\Syste
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\bin\System.Web.WebPages.Razor.xml
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\bin\Antlr3.Runtime.pdb
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard _Home_Assignment_BackEnd.csproj.AssemblyReference.cache
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard _Home_Assignment_BackEnd.csproj.CoreCompileInputs.cache
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard _Home_Assignment_BackEnd.csproj.CopyComplete
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment Server.dll
