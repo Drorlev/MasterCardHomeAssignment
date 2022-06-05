@@ -2,7 +2,7 @@ import React , { useState,useEffect}  from 'react'
 import QnA from './Q&A';
 import url from './Url.js';
 
-const Questions = (props) =>{
+const QuestionsList = (props) =>{
     const [questions, setQuestions] = useState("There is no Questions");
 
     const getQuestionsData = () =>{
@@ -20,8 +20,7 @@ const Questions = (props) =>{
               (result) => {
                 console.log("fetch realResult= ", result);
                 let questionsList =result.map(q =>
-                    console.log(q)
-                    //<QnA questionData={q}/>
+                    <QnA key={q.QId} questionData={q}/>
                 )
                 console.log(questionsList);
                 setQuestions(questionsList);
@@ -36,10 +35,10 @@ const Questions = (props) =>{
         getQuestionsData();
       },[props]);
     return(
-        <div className='text'>
+        <div className='scroll'>
             {questions}
         </div>
     )
 }
 
-export default Questions;
+export default QuestionsList;

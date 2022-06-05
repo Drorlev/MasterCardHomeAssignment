@@ -1,9 +1,11 @@
 import React from 'react'
+import '../CSS/Qustionnaire.css'
 
 const Question = (props) =>{
     return(
-        <div>
-           
+        <div className='question'>
+           <h4>{props.question}</h4>
+          
         </div>
     )
 }

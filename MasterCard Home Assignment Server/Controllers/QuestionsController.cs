@@ -10,20 +10,13 @@ namespace MasterCard_Home_Assignment_Server.Controllers
 {
     public class QuestionsController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        // GET api/<controller>/
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public IHttpActionResult Get(int qid)
-        {
-            Question question = new Question();
             try
             {
-                question = question.GetQuestion(qid);
-                return Ok(question);
+                List<Question> questionlist = new Question().GetQuestions();
+                return Ok(questionlist);
             }
             catch (Exception ex)
             {
