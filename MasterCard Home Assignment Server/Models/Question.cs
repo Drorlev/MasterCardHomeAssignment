@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MasterCard_Home_Assignment_Server.Models
 {
-    public enum QType { Open, Close }
+    public enum QType { Multi, One }
     public class Question
     {
         public int QId { get; set; }

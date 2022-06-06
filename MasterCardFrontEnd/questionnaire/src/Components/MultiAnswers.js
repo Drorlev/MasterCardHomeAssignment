@@ -4,7 +4,7 @@ import '../CSS/Answers.css'
 
 
 let answerDict = []; 
-const ClosedAnswers = (props) =>{
+const MultiAnswers = (props) =>{
     const [answers, setAnswers] = useState("There is no answers")
     console.log("props.answerNum ", props.answerNum);
     const handleChange = (e) => {
@@ -70,8 +70,9 @@ const ClosedAnswers = (props) =>{
     return(
         <div>
             {answers}
+            
         </div>
     )
 }
 
-export default ClosedAnswers;
+export default MultiAnswers;

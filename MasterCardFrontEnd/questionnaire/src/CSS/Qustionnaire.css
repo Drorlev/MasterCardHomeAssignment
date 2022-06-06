@@ -1,7 +1,7 @@
 .text{
     color: black;
 }
-.Home {
+.Home1 {
     background-color:  #FFFEF2;
     height: 85%;
     display: flex;
@@ -11,20 +11,35 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
+.Home {
+    background-color:  #FFFEF2;
+    height: 85%;
+    
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
 .qna{
+    text-align: start;
     color: black;
     background-color: #D4CAA3;
-    width: 60%;
+    width: 100%;
     min-height: 250px;
-    margin: auto;
-    border: 3px solid green;
+    /*margin: auto;
+    border: 3px solid green;*/
     margin-top: 1%;
 }
 .scroll{
     max-height:100%;
     overflow-y: scroll;
     width: 100%;
+   /* background-color: aqua;
+    flex: 1;*/
 }
 .question{
     background-color: #F6E8B1;
+    padding-left: 5%;
+}
+.p{
+    text-align: start;
+    color: black;
 }
