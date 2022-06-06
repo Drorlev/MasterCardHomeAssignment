@@ -1,8 +1,9 @@
 .checkbox{
-    padding-right: 5px;
+    margin-right: 2%;
 }
 .rowDiv{
     width: 100%;
-    display: flexbox;
-    justify-content: start;
+    display: inline-block;
+    padding-left: 2%;
+    
 }

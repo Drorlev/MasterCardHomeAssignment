@@ -172,3 +172,4 @@ C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard _Home_Assignment_BackEnd.csproj.CopyComplete
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment Server.dll
 C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard Home Assignment Server.pdb
+C:\Projects\MasterCardHomeAssignment\MasterCard Home Assignment Server\obj\Debug\MasterCard _Home_Assignment_BackEnd.csproj.AssemblyReference.cache
