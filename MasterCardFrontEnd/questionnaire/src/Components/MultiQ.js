@@ -46,7 +46,7 @@ const MultiQ = (props) =>{
             .then(
               (result) => {
                 let ansList = result.map(a =>
-                    <div key={a.aid}><input className='checkbox' type="checkbox" name="myCheckbox" value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
+                    <div key={a.AId}><input className='checkbox' type="checkbox" name="myCheckbox" value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
                 )
                 answerDict = [];
                 setAnswers(ansList)
@@ -55,9 +55,9 @@ const MultiQ = (props) =>{
                 console.log("err post=", error);
                 });
     }
-            useEffect(() => {
-              getClosedAnswers();
-            },[]);
+    useEffect(() => {
+      getClosedAnswers();
+    },[]);
     return(
         <div className="rowDiv">
             {answers}

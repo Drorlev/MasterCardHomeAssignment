@@ -13,7 +13,7 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
         {
             List<Question> qlist = new List<Question>();
             qlist.Add(new Question(1, "1+1=?", QType.Multi, 1));
-            qlist.Add(new Question(2, "2+1=?", QType.Multi, 1));
+            qlist.Add(new Question(2, "2+1=?", QType.One, 1));
             
             return qlist;
         }
@@ -24,7 +24,7 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
             alist.Add(new Answer(1, 1, "1", 50));
             alist.Add(new Answer(1, 2, "3", 50));
             alist.Add(new Answer(1, 3, "4", 0));
-            
+
 
             return alist;
         }
