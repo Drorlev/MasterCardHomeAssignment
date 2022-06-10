@@ -1,6 +1,7 @@
 import React , { useState}  from 'react'
 import MultiAnswers from './MultiAnswers'
 import MultiQ from './MultiQ';
+import SingleQ from './SingleQ';
 let answers;
 const AnswerList = (props) =>{
     const [q, setQ] = useState([])
@@ -12,9 +13,9 @@ const AnswerList = (props) =>{
     }
 
     if(props.qType == 0){
-        answers =<MultiQ qid={props.qid} answerNum={props.answerNum} parentCallback = {handleCallback}/>
+        answers =<MultiQ qid={props.qid} answerNum={props.answerNum} parentCallback={handleCallback}/>
     }else{
-        answers = <input id='answer' type="text" name="name" />
+        answers = <SingleQ qid={props.qid} parentCallback={handleCallback}/>
     }
     return(
         <div> 

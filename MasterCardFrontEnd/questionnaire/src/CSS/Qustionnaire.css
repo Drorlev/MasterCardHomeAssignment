@@ -13,7 +13,7 @@
 }
 .Home {
     background-color:  #FFFEF2;
-    height: 85%;
+    height: 80%;
     
     font-size: calc(10px + 2vmin);
     color: white;
@@ -42,4 +42,9 @@
 .p{
     text-align: start;
     color: black;
+}
+.progBar{
+    justify-content: center;
+    width: 60%;
+    height: 5%;
 }
