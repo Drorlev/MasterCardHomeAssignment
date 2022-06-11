@@ -5,6 +5,8 @@ import {useLocation} from "react-router-dom";
 import QuestionsList from './QuestionsList';
 import { Button, ProgressBar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 const Qustionnaire = () =>{
     const { state } = useLocation();
     const [btn, setBtn] = useState(<></>);
@@ -26,12 +28,11 @@ const Qustionnaire = () =>{
             })
             .then(
               (result) => {
-                console.log("############## Q amount ",result);
+                return result
               },
               (error) => {
                 console.log("err post=", error);
                 });
-        return 2
     }
 
     const postAnswers = () =>{
@@ -39,15 +40,18 @@ const Qustionnaire = () =>{
     }
 
     const qustionsNum = getQustionsAmount();
-    //getQustionsNum();
+    
+    //get data for childs components
     const handleCallback = (childData) =>{
-        console.log("Qustionnaire ",childData);
         ansArr = childData;
-        console.log("Size ", Object.keys(ansArr).length);
-        console.log("qUSTIONS NUM ",qustionsNum);
+        
+        //Toggle button visibility
         setBtn((Object.keys(ansArr).length == qustionsNum)? <Button variant="success" onClick={postAnswers}>Submit</Button> :   <></>)
+        
+        //Sets ProgressBar size
         setProgBar((Object.keys(ansArr).length / qustionsNum)*100)
     }
+    
     return (
         <div className='Home'>
             <div className='progBar'>

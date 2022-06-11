@@ -6,13 +6,13 @@ import '../CSS/Answers.css'
 const MultiQ = (props) =>{
     const [answers, setAnswers] = useState("There is no answers");
     const inputTxt = useRef(null);
-    const checkboxRef = useRef(null);
   
     let answerDict = [];
 
     const handleChange = (e) =>{
       const {value ,checked } = e.target;
       let input = inputTxt.current.value;
+
       //Empty arr & checked = true
       if(answerDict.length == 0 && checked){
         answerDict.push(value);
@@ -28,10 +28,10 @@ const MultiQ = (props) =>{
           answerDict = answerDict.filter(val => val != value);
         }
       }
-      //sentSentDataToParent();
-      //console.log("#######input ",input);
+
       props.parentCallback({answerArr:answerDict, commnet:input})
     }
+
     const getClosedAnswers = () =>{
         fetch(url+"api/answers/?qid="+props.qid, {
             method: 'GET',
