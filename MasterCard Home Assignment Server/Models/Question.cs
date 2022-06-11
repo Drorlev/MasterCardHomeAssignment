@@ -12,13 +12,11 @@ namespace MasterCard_Home_Assignment_Server.Models
         public int QId { get; set; }
         public string The_Question { get; set; }
         public QType QuestionType { get; set; }
-        public int AnswersNum { get; set; }
-        public Question(int qId, string the_Question, QType questionType, int answersNum)
+        public Question(int qId, string the_Question, QType questionType)
         {
             QId = qId;
             The_Question = the_Question;
             QuestionType = questionType;
-            AnswersNum = answersNum;
         }
 
         public Question() { }
@@ -27,6 +25,12 @@ namespace MasterCard_Home_Assignment_Server.Models
         {
             DBServices ds = new DBServices();
             return ds.GetQuestions();
+        }
+
+        public int GetAmount()
+        {
+            DBServices ds = new DBServices();
+            return ds.GetQuestionsAmount();
         }
 
     }
