@@ -9,8 +9,15 @@ const QuestionsList = (props) =>{
 
 
     const handleCallback = (childData) =>{
+      console.log("QuestionsList Data",childData );
+      console.log("childData.answerData ",childData.answerData);
+      console.log("childData.answerData ",childData.answerData.answerArr);
+      let id = childData.qid
       let answers = childData.answerData.answerArr;
       (answers.length == 0)? delete qnAarr[childData.qid] : qnAarr[childData.qid] = childData.answerData ;
+      console.log("qnAarr ",qnAarr);
+      let size = Object.keys(qnAarr).length
+      console.log("qnAarr length",size);
       props.parentCallback(qnAarr)
   }
 
@@ -27,10 +34,13 @@ const QuestionsList = (props) =>{
             })
             .then(
               (result) => {
+                console.log("fetch realResult= ", result);
                 let questionsList =result.map(q =>
                     <QnA key={q.QId} questionData={q} parentCallback={handleCallback}/>
                 )
+                console.log(questionsList);
                 setQnAList(questionsList);
+                
               },
               (error) => {
                 console.log("err post=", error);
