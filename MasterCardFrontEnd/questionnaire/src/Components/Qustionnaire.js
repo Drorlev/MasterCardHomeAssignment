@@ -36,6 +36,46 @@ const Qustionnaire = () =>{
 
     const postAnswers = () =>{
         alert("Post")
+        //console.log("in postBtn ",ansArr);
+        //console.log("in postBtn Servy ID",state);
+        let postedList = [];
+        console.log("in postBtn ");
+        for (const key in ansArr) {
+            console.log(ansArr[key]);
+            console.log(ansArr[key].answerArr);
+            ansArr[key].answerArr.map(ans=>{
+              const answered = {
+                QId: key,
+                AId: ans,
+                Comment: ansArr[key]?.comment,
+                QustionnaireID:state,
+              }
+              postedList.push(answered);
+            })
+        }
+        console.log(postedList);
+
+        ////Fetch
+        fetch(url+"api/answers/", {
+          method: 'POST',
+          body: JSON.stringify(postedList),
+          headers: new Headers({
+            'Content-type': 'application/json; charset=UTF-8', //very important to add the 'charset=UTF-8'!!!!
+            'Accept': 'application/json; charset=UTF-8'
+          })
+        })
+          .then(res => {
+            console.log('res=', res);
+            return res.json()
+          })
+          .then(
+            (result) => {
+              //console.log("fetch POST= ", result);
+              
+            },
+            (error) => {
+              console.log("err post=", error);
+            });
     }
 
     getQustionsAmount();

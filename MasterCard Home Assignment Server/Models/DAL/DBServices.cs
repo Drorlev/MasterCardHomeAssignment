@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Configuration;
 
@@ -89,7 +90,7 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
             try
             {
                 con = connect("DBConnectionString"); // create a connection to the database using the connection String defined in the web config file
-                String selectSTR = "select * from Answers where qid ="+qid;
+                String selectSTR = "select * from Answers where qid =" + qid;
                 SqlCommand cmd = new SqlCommand(selectSTR, con);
 
                 // get a reader
@@ -152,6 +153,114 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
                 }
 
             }
+        }
+
+        public void Insert(List<Answered> alist)
+        {
+            SqlConnection con;
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                con = connect("DBConnectionString"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            BuildInsertCommand(con, cmd, alist);
+            /*
+            try
+            {
+                int numEffected = cmd.ExecuteNonQuery(); // execute the command
+
+            }
+            catch (SqlException Ex)
+            {
+                if (Ex.Number == 2627)
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+
+                    con.Close();
+                }
+            }
+            */
+            
+        }
+
+        private void BuildInsertCommand(SqlConnection con, SqlCommand cmd, List<Answered> alist)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            string prefix = null;
+
+            cmd.Connection = con;
+            cmd.CommandTimeout = 10;   // Time to wait for the execution' The default is 30 seconds
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            string cmdText = "";
+            // use a string builder to create the dynamic string
+
+
+            cmdText += "INSERT INTO Answered (aid,  qid, qustionnaireID, comment) " +
+            "Values (@aid,  @qid, @qustionnaireID, @comment)";
+
+            cmd.CommandText = cmdText;
+            cmd.Parameters.Add("@qid", SqlDbType.Int);
+            cmd.Parameters.Add("@aid", SqlDbType.Int);
+            cmd.Parameters.Add("@qustionnaireID", SqlDbType.Int);
+            cmd.Parameters.Add("@comment", SqlDbType.NVarChar );
+            foreach (var answered in alist)
+            {
+                string cmt = (answered.Comment == null) ? "": answered.Comment;
+                
+                cmd.Parameters["@comment"].Value = cmt;
+                cmd.Parameters["@aid"].Value = answered.AId;
+                cmd.Parameters["@qid"].Value = answered.QId;
+                cmd.Parameters["@qustionnaireID"].Value = answered.QustionnaireID;
+                
+                try
+                {
+                    int numEffected = cmd.ExecuteNonQuery(); // execute the command
+
+                }
+                catch (SqlException Ex)
+                {
+                    if (Ex.Number == 2627)
+                    {
+
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                    con.Close();
+                }
+                
+            }
+            con.Close();
+
+           
+
+
+
+
+
+
         }
 
     }

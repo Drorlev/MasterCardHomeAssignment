@@ -27,8 +27,10 @@ namespace MasterCard_Home_Assignment_Server.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public void Post([FromBody] List<Answered> alist)
         {
+            Answered answered = new Answered();
+            answered.Insert(alist);
         }
 
         // PUT api/<controller>/5

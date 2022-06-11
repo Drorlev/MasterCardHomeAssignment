@@ -30,7 +30,7 @@ const MultiQ = (props) =>{
       }
       //sentSentDataToParent();
       //console.log("#######input ",input);
-      props.parentCallback({answerArr:answerDict, commnet:input})
+      props.parentCallback({answerArr:answerDict, comment:input})
     }
     const getClosedAnswers = () =>{
         fetch(url+"api/answers/?qid="+props.qid, {
