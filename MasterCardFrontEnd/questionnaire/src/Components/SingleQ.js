@@ -27,11 +27,12 @@ const SingleQ = (props) =>{
             })
             .then(
                 (result) => {
-                    let ansList = result.map(a =>
-                        <div key={a.AId}><input className='checkbox' type="radio" name={"radio"+props.qid} value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
-                    )
-                    answerDict = [];
-                    setAnswers(ansList)
+                    console.log("Fetch SIngaleQ ",result);
+                let ansList = result.map(a =>
+                    <div key={a.AId}><input className='checkbox' type="radio" name={"radio"+props.qid} value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
+                )
+                answerDict = [];
+                setAnswers(ansList)
                 },
                 (error) => {
                 console.log("err post=", error);
