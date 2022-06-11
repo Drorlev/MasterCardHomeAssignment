@@ -11,7 +11,7 @@ const Qustionnaire = () =>{
     const [progBar, setProgBar] = useState(0);
     let ansArr=[];
 
-
+    let qustionsNum
     //get num of questions
     const getQustionsAmount = () =>{
         fetch(url+"api/Questions/getQuestionsAmount", {
@@ -27,18 +27,19 @@ const Qustionnaire = () =>{
             .then(
               (result) => {
                 console.log("############## Q amount ",result);
+                qustionsNum = result;
               },
               (error) => {
                 console.log("err post=", error);
                 });
-        return 2
     }
 
     const postAnswers = () =>{
         alert("Post")
     }
 
-    const qustionsNum = getQustionsAmount();
+    getQustionsAmount();
+    console.log("####################### real Q num",qustionsNum);
     //getQustionsNum();
     const handleCallback = (childData) =>{
         console.log("Qustionnaire ",childData);
