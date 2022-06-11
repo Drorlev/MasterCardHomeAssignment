@@ -27,6 +27,7 @@ const SingleQ = (props) =>{
             })
             .then(
                 (result) => {
+                    console.log("Fetch SIngaleQ ",result);
                 let ansList = result.map(a =>
                     <div key={a.AId}><input className='checkbox' type="radio" name={"radio"+props.qid} value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
                 )

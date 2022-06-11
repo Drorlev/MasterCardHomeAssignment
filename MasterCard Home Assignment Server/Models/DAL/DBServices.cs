@@ -10,8 +10,8 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
 {
     public class DBServices
     {
-        static List<Answer> alist = new List<Answer>(); //would be not needed
-        
+
+
         public SqlDataAdapter da;
         public DataTable dt;
 
@@ -47,15 +47,44 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
         public List<Question> GetQuestions()
         {
             List<Question> qlist = new List<Question>();
-            qlist.Add(new Question(1, "1+1=?", QType.Multi));
-            qlist.Add(new Question(2, "2+1=?", QType.One));
+            SqlConnection con = null;
+            try
+            {
+                con = connect("DBConnectionString"); // create a connection to the database using the connection String defined in the web config file
+                String selectSTR = "select * from Questions";
+                SqlCommand cmd = new SqlCommand(selectSTR, con);
 
-            return qlist;
+                // get a reader
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {   // Read till the end of the data into a row
+                    Question q = new Question();
+                    q.QId = Convert.ToInt32(dr["qid"]);
+                    q.The_Question = (string)dr["question"];
+                    q.QuestionType = (QType)dr["q_type"];
+                    qlist.Add(q);
+                }
+                return qlist;
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+
+            }
         }
         public List<Answer> GetAnswers(int qid)
         {
             //has to modify by qid 
-
+            List<Answer> alist = new List<Answer>(); //would be not needed
             alist.Add(new Answer(1, 1, "1", 50));
             alist.Add(new Answer(1, 2, "3", 50));
             alist.Add(new Answer(1, 3, "4", 0));
