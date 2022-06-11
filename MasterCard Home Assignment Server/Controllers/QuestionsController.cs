@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace MasterCard_Home_Assignment_Server.Controllers
 {
+    [EnableCors("*", "*", "*")]
     [RoutePrefix("api/Questions")]
     public class QuestionsController : ApiController
     {
@@ -26,7 +28,9 @@ namespace MasterCard_Home_Assignment_Server.Controllers
             }
         }
 
+        
         [Route("getQuestionsAmount")]
+        [HttpGet]
         public IHttpActionResult GetQAmount()
         {
             try

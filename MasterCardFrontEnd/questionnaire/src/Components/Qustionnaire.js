@@ -1,5 +1,6 @@
 import React , { useState, useEffect}  from 'react'
 import '../CSS/Qustionnaire.css'
+import url from './Url.js';
 import {useLocation} from "react-router-dom";
 import QuestionsList from './QuestionsList';
 import { Button, ProgressBar } from 'react-bootstrap'
@@ -12,7 +13,24 @@ const Qustionnaire = () =>{
 
 
     //get num of questions
-    const getQustionsNum = () =>{
+    const getQustionsAmount = () =>{
+        fetch(url+"api/Questions/getQuestionsAmount", {
+            method: 'GET',
+            headers: new Headers({
+              'Content-Type': 'application/json; charset=UTF-8',
+              'Accept': 'application/json; charset=UTF-8'
+            })
+          })
+            .then(res => {
+              return res.json()
+            })
+            .then(
+              (result) => {
+                console.log("############## Q amount ",result);
+              },
+              (error) => {
+                console.log("err post=", error);
+                });
         return 2
     }
 
@@ -20,7 +38,7 @@ const Qustionnaire = () =>{
         alert("Post")
     }
 
-    const qustionsNum = getQustionsNum();
+    const qustionsNum = getQustionsAmount();
     //getQustionsNum();
     const handleCallback = (childData) =>{
         console.log("Qustionnaire ",childData);
