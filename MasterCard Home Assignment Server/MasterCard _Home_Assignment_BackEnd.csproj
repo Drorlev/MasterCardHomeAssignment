@@ -170,6 +170,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Answered.cs" />
     <Compile Include="Models\DAL\DBServices.cs" />
     <Compile Include="Models\Questionnaire.cs" />
     <Compile Include="Models\Question.cs" />
