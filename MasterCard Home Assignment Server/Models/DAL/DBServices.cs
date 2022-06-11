@@ -85,12 +85,39 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
         {
             //has to modify by qid 
             List<Answer> alist = new List<Answer>(); //would be not needed
-            alist.Add(new Answer(1, 1, "1", 50));
-            alist.Add(new Answer(1, 2, "3", 50));
-            alist.Add(new Answer(1, 3, "4", 0));
+            SqlConnection con = null;
+            try
+            {
+                con = connect("DBConnectionString"); // create a connection to the database using the connection String defined in the web config file
+                String selectSTR = "select * from Answers where qid ="+qid;
+                SqlCommand cmd = new SqlCommand(selectSTR, con);
 
+                // get a reader
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-            return alist;
+                while (dr.Read())
+                {   // Read till the end of the data into a row
+                    Answer answer = new Answer();
+                    answer.QId = Convert.ToInt32(dr["qid"]);
+                    answer.AId = Convert.ToInt32(dr["aid"]);
+                    answer.The_Answer = (string)dr["the_Answer"];
+                    alist.Add(answer);
+                }
+                return alist;
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+
+            }
         }
 
         public int GetQuestionsAmount()
