@@ -71,7 +71,7 @@ const Qustionnaire = () =>{
           .then(
             (result) => {
               //console.log("fetch POST= ", result);
-              
+              alert(result)
             },
             (error) => {
               console.log("err post=", error);

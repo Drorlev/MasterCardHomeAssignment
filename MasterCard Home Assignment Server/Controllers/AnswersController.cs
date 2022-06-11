@@ -27,10 +27,19 @@ namespace MasterCard_Home_Assignment_Server.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody] List<Answered> alist)
+        public IHttpActionResult Post([FromBody] List<Answered> alist)
         {
-            Answered answered = new Answered();
-            answered.Insert(alist);
+            try
+            {
+                Answered answered = new Answered();
+                answered.Insert(alist);
+                return Ok("ok");
+            }
+            catch (Exception ex)
+            {
+                //return BadRequest(ex.Massage);
+                return Content(HttpStatusCode.BadRequest, ex);
+            }
         }
 
         // PUT api/<controller>/5
