@@ -1,8 +1,6 @@
 ﻿using MasterCard_Home_Assignment_Server.Models.DAL;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 
 namespace MasterCard_Home_Assignment_Server.Models
 {

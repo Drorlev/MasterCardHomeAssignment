@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Web;
 using System.Web.Configuration;
 
 namespace MasterCard_Home_Assignment_Server.Models.DAL
 {
     public class DBServices
     {
-
-
         public SqlDataAdapter da;
         public DataTable dt;
 
@@ -82,10 +77,10 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
 
             }
         }
+
         public List<Answer> GetAnswers(int qid)
         {
-            //has to modify by qid 
-            List<Answer> alist = new List<Answer>(); //would be not needed
+            List<Answer> alist = new List<Answer>();
             SqlConnection con = null;
             try
             {
@@ -171,48 +166,17 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
             }
 
             BuildInsertCommand(con, cmd, alist);
-            /*
-            try
-            {
-                int numEffected = cmd.ExecuteNonQuery(); // execute the command
-
-            }
-            catch (SqlException Ex)
-            {
-                if (Ex.Number == 2627)
-                {
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-            finally
-            {
-                if (con != null)
-                {
-
-                    con.Close();
-                }
-            }
-            */
-            
         }
 
         private void BuildInsertCommand(SqlConnection con, SqlCommand cmd, List<Answered> alist)
         {
 
-            StringBuilder sb = new StringBuilder();
-            string prefix = null;
-
             cmd.Connection = con;
-            cmd.CommandTimeout = 10;   // Time to wait for the execution' The default is 30 seconds
+            cmd.CommandTimeout = 10; 
             cmd.CommandType = System.Data.CommandType.Text;
 
             string cmdText = "";
-            // use a string builder to create the dynamic string
+            
 
 
             cmdText += "INSERT INTO Answered (aid,  qid, qustionnaireID, comment) " +
@@ -222,16 +186,16 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
             cmd.Parameters.Add("@qid", SqlDbType.Int);
             cmd.Parameters.Add("@aid", SqlDbType.Int);
             cmd.Parameters.Add("@qustionnaireID", SqlDbType.Int);
-            cmd.Parameters.Add("@comment", SqlDbType.NVarChar );
+            cmd.Parameters.Add("@comment", SqlDbType.NVarChar);
             foreach (var answered in alist)
             {
-                string cmt = (answered.Comment == null) ? "": answered.Comment;
-                
+                string cmt = (answered.Comment == null) ? "" : answered.Comment;
+
                 cmd.Parameters["@comment"].Value = cmt;
                 cmd.Parameters["@aid"].Value = answered.AId;
                 cmd.Parameters["@qid"].Value = answered.QId;
                 cmd.Parameters["@qustionnaireID"].Value = answered.QustionnaireID;
-                
+
                 try
                 {
                     int numEffected = cmd.ExecuteNonQuery(); // execute the command
@@ -239,29 +203,100 @@ namespace MasterCard_Home_Assignment_Server.Models.DAL
                 }
                 catch (SqlException Ex)
                 {
-                    if (Ex.Number == 2627)
-                    {
-
-                    }
                     con.Close();
+                    throw (Ex);
                 }
                 catch (Exception ex)
                 {
-                    throw (ex);
                     con.Close();
+                    throw (ex);
                 }
-                
+
             }
             con.Close();
-
-           
-
-
-
-
-
-
         }
 
+        public int GetScore(int qid)
+        {
+            int score = 0;
+            List<Answer> alist = new List<Answer>();
+            Dictionary<int, int> aListDict = new Dictionary<int, int>();
+            SqlConnection con = null;
+            try
+            {
+                con = connect("DBConnectionString"); // create a connection to the database using the connection String defined in the web config file
+
+                //sql query which return all the answers
+                //that there question has more than one answer
+                //q_type = 0
+                String selectSTR = "select AD.aid, AD.qid, AD.qustionnaireID, Q.q_type, ANS.score from Answered as AD " +
+                                "INNER JOIN Questions as Q " +
+                                "ON AD.qid = Q.qid " +
+                                "INNER JOIN Answers as ANS " +
+                                "ON ANS.aid = AD.aid " +
+                                "where AD.qustionnaireID = " + qid + " and Q.q_type = 0";
+
+
+
+                SqlCommand cmd = new SqlCommand(selectSTR, con);
+
+                // get a reader
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {   // Read till the end of the data into a row
+                    Answer answer = new Answer();
+                    answer.QId = Convert.ToInt32(dr["qid"]);
+                    answer.AId = Convert.ToInt32(dr["aid"]);
+                    answer.Score = Convert.ToInt32(dr["score"]);
+                    alist.Add(answer);
+                    if (aListDict.ContainsKey(answer.QId))
+                    {
+                        aListDict[answer.QId] = 1;
+                    }
+                    else
+                    {
+                        aListDict.Add(answer.QId, 0);
+                    }
+                }
+
+                //calculate which asnwers should get 50% points
+                foreach (var ans in alist)
+                {
+                    score += (aListDict[ans.QId] == 1) ? ans.Score : (ans.Score / 2);
+                }
+                con.Close();
+                SqlConnection con2 = connect("DBConnectionString");
+                selectSTR = "select Answered.aid, Answered.qid, Answered.qustionnaireID,Q.q_type, ANS.score from Answered " +
+                            "INNER JOIN Questions as Q " +
+                            "ON Answered.qid = Q.qid " +
+                            "INNER JOIN Answers as ANS " +
+                            "ON ANS.aid = Answered.aid " +
+                            "where Answered.qustionnaireID = " + qid + " and Q.q_type = 1";
+
+                SqlCommand cmd2 = new SqlCommand(selectSTR, con2);
+                dr = cmd2.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {   // Read till the end of the data into a row
+                    score += Convert.ToInt32(dr["score"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+
+            }
+
+            return score;
+        }
     }
 }
