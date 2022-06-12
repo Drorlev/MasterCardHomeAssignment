@@ -1,4 +1,4 @@
-import React , { useState,useEffect}  from 'react'
+import React from 'react'
 import '../CSS/Qustionnaire.css'
 import AnswerList from './AnswersList';
 import Question from './Question';

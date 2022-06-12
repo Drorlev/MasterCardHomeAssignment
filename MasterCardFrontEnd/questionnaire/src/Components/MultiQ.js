@@ -6,7 +6,6 @@ import '../CSS/Answers.css'
 const MultiQ = (props) =>{
     const [answers, setAnswers] = useState("There is no answers");
     const inputTxt = useRef(null);
-    const checkboxRef = useRef(null);
   
     let answerDict = [];
 
@@ -28,8 +27,6 @@ const MultiQ = (props) =>{
           answerDict = answerDict.filter(val => val != value);
         }
       }
-      //sentSentDataToParent();
-      //console.log("#######input ",input);
       props.parentCallback({answerArr:answerDict, comment:input})
     }
     const getClosedAnswers = () =>{
