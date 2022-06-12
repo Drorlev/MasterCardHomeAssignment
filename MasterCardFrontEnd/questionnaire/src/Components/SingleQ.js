@@ -1,4 +1,4 @@
-import React, {useEffect,useState, useRef} from "react";
+import React, {useEffect,useState} from "react";
 import url from './Url.js';
 import '../CSS/Answers.css'
 
@@ -8,7 +8,6 @@ const SingleQ = (props) =>{
     let answerDict = [];
 
     const handleChange = (e) =>{
-        console.log(e.target.value);
         answerDict[0] = e.target.value
         props.parentCallback({answerArr:answerDict})
     }
@@ -27,9 +26,8 @@ const SingleQ = (props) =>{
             })
             .then(
                 (result) => {
-                    console.log("Fetch SIngaleQ ",result);
-                let ansList = result.map(a =>
-                    <div key={a.AId}><input className='checkbox' type="radio" name={"radio"+props.qid} value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
+                    let ansList = result.map(a =>
+                        <div key={a.AId}><input className='checkbox' type="radio" name={"radio"+props.qid} value={a.AId} onChange={handleChange}/><label>{a.The_Answer}</label></div>
                 )
                 answerDict = [];
                 setAnswers(ansList)

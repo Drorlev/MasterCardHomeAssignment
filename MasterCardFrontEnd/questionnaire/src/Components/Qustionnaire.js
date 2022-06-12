@@ -35,7 +35,6 @@ const Qustionnaire = () =>{
             })
             .then(
               (result) => {
-                console.log("############## Q amount ",result);
                 qustionsNum = result;
               },
               (error) => {
@@ -45,10 +44,7 @@ const Qustionnaire = () =>{
 
     const postAnswers = () =>{
         let postedList = [];
-        console.log("in postBtn ");
         for (const key in ansArr) {
-            console.log(ansArr[key]);
-            console.log(ansArr[key].answerArr);
             ansArr[key].answerArr.map(ans=>{
               const answered = {
                 QId: key,
@@ -59,7 +55,6 @@ const Qustionnaire = () =>{
               postedList.push(answered);
             })
         }
-        console.log(postedList);
 
         ////Fetch
         fetch(url+"api/answers/", {
@@ -71,7 +66,6 @@ const Qustionnaire = () =>{
           })
         })
           .then(res => {
-            console.log('res=', res);
             return res.json()
           })
           .then(
@@ -86,12 +80,9 @@ const Qustionnaire = () =>{
     getQustionsAmount();
    
     const handleCallback = (childData) =>{
-        console.log("Qustionnaire ",childData);
-        ansArr = childData;
-        console.log("Size ", Object.keys(ansArr).length);
-        console.log("qUSTIONS NUM ",qustionsNum);
-        setBtn((Object.keys(ansArr).length == qustionsNum)? <Button variant="success" onClick={postAnswers}>Submit</Button> :   <></>)
-        setProgBar((Object.keys(ansArr).length / qustionsNum)*100)
+      ansArr = childData;
+      setBtn((Object.keys(ansArr).length == qustionsNum)? <Button variant="success" onClick={postAnswers}>Submit</Button> :   <></>)
+      setProgBar((Object.keys(ansArr).length / qustionsNum)*100)
     }
     return (
         <div className='Home'>
