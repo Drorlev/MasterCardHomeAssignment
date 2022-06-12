@@ -8,7 +8,9 @@ let qustionnaire = 0;
 const Start = () =>{
     const navigate = useNavigate();
     const startQ = () => {
+        qustionnaire++;
 		navigate('/qustionnaire', { state: JSON.stringify(qustionnaire) });
+        
     }
 
     return(
