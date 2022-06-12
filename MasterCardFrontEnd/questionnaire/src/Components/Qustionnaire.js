@@ -2,16 +2,25 @@ import React , { useState, useEffect}  from 'react'
 import '../CSS/Qustionnaire.css'
 import url from './Url.js';
 import {useLocation} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import QuestionsList from './QuestionsList';
 import { Button, ProgressBar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 const Qustionnaire = () =>{
     const { state } = useLocation();
     const [btn, setBtn] = useState(<></>);
     const [progBar, setProgBar] = useState(0);
+    const navigate = useNavigate();
     let ansArr=[];
 
-    let qustionsNum
+    let qustionsNum;
+
+    const navigateToScore = () =>{
+      navigate('/score', { state: state });
+    }
+
+
     //get num of questions
     const getQustionsAmount = () =>{
         fetch(url+"api/Questions/getQuestionsAmount", {
@@ -35,9 +44,6 @@ const Qustionnaire = () =>{
     }
 
     const postAnswers = () =>{
-        alert("Post")
-        //console.log("in postBtn ",ansArr);
-        //console.log("in postBtn Servy ID",state);
         let postedList = [];
         console.log("in postBtn ");
         for (const key in ansArr) {
@@ -70,8 +76,7 @@ const Qustionnaire = () =>{
           })
           .then(
             (result) => {
-              //console.log("fetch POST= ", result);
-              alert(result)
+              navigateToScore();
             },
             (error) => {
               console.log("err post=", error);
@@ -79,8 +84,7 @@ const Qustionnaire = () =>{
     }
 
     getQustionsAmount();
-    console.log("####################### real Q num",qustionsNum);
-    //getQustionsNum();
+   
     const handleCallback = (childData) =>{
         console.log("Qustionnaire ",childData);
         ansArr = childData;
